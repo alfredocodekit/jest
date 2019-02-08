@@ -3,7 +3,7 @@ id: getting-started
 title: Getting Started
 ---
 
-Install Jest using [`yarn`](https://yarnpkg.com/en/package/jest):
+Instalar Jest usando [`yarn`](https://yarnpkg.com/en/package/jest):
 
 ```bash
 yarn add --dev jest
@@ -15,9 +15,9 @@ Or [`npm`](https://www.npmjs.com/):
 npm install --save-dev jest
 ```
 
-Note: Jest documentation uses `yarn` commands, but `npm` will also work. You can compare `yarn` and `npm` commands in the [yarn docs, here](https://yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison).
+Nota: En la documentación de Jest se utilizan comandos `yarn`, aunque `npm` también funciona. Puedes comparar los comandos `yarn` y `npm` en la [documentación de yarn, aquí](https://yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison).
 
-Let's get started by writing a test for a hypothetical function that adds two numbers. First, create a `sum.js` file:
+Comencemos escribiendo una prueba para una función hipotética que sume dos números. Primero, creamos un archivo `sum.js`:
 
 ```javascript
 function sum(a, b) {
@@ -26,7 +26,7 @@ function sum(a, b) {
 module.exports = sum;
 ```
 
-Then, create a file named `sum.test.js`. This will contain our actual test:
+Luego, creamos un archivo llamado `sum.test.js`. Esto contendrá nuestra prueba real:
 
 ```javascript
 const sum = require('./sum');
@@ -36,7 +36,7 @@ test('adds 1 + 2 to equal 3', () => {
 });
 ```
 
-Add the following section to your `package.json`:
+Añadimos la siguiente sección a nuestro `package.json`:
 
 ```json
 {
@@ -46,48 +46,48 @@ Add the following section to your `package.json`:
 }
 ```
 
-Finally, run `yarn test` or `npm run test` and Jest will print this message:
+Por útimo, ejecutamos `yarn test` o `npm run test` y Jest nos mostrará el siguiente mensaje:
 
 ```bash
 PASS  ./sum.test.js
 ✓ adds 1 + 2 to equal 3 (5ms)
 ```
 
-**You just successfully wrote your first test using Jest!**
+**¡Acabas de escribir con éxito tu primera prueba usando Jest!**
 
-This test used `expect` and `toBe` to test that two values were exactly identical. To learn about the other things that Jest can test, see [Using Matchers](UsingMatchers.md).
+Esta prueba usó `expect` y `toBe` para probar que dos valores eran exactamente idénticos. Para aprender sobre las otras cosas que Jest puede probar, ver [Using Matchers](UsingMatchers.md).
 
-## Running from command line
+## Ejecutando desde línea de comandos
 
-You can run Jest directly from the CLI (if it's globally available in your `PATH`, e.g. by `yarn global add jest` or `npm install jest --global`) with a variety of useful options.
+Puedes ejecutar Jest directamente desde el CLI (si está disponible globalmente en su `PATH`, por ejemplo, mediante` yarn global add jest` o `npm install jest --global`) con una variedad de opciones útiles.
 
-Here's how to run Jest on files matching `my-test`, using `config.json` as a configuration file and display a native OS notification after the run:
+A continuación, se explica cómo ejecutar Jest en los archivos que coincidan con `my-test`, usando `config.json` como archivo de configuración y mostrar una notificación nativa del sistema operativo después de la ejecución:
 
 ```bash
 jest my-test --notify --config=config.json
 ```
 
-If you'd like to learn more about running `jest` through the command line, take a look at the [Jest CLI Options](CLI.md) page.
+Si deseas obtener más información sobre cómo ejecutar `jest` a través de la línea de comandos, echa un vistazo a la página [Opciones de CLI de Jest] (CLI.md).
 
-## Additional Configuration
+## Configuración adicional
 
-### Generate a basic configuration file
+### Generar un archivo de configuración básico.
 
-Based on your project, Jest will ask you a few questions and will create a basic configuration file with a short description for each option:
+Basándose en tu proyecto, Jest te hará algunas preguntas y creará un archivo de configuración básico con una breve descripción de cada opción:
 
 ```bash
 jest --init
 ```
 
-### Using Babel
+### Utilizando Babel
 
-To use [Babel](http://babeljs.io/), install required dependencies via `yarn`:
+Para utilizar [Babel](http://babeljs.io/), instalaremos las dependencias necesarias vía `yarn`:
 
 ```bash
 yarn add --dev babel-jest @babel/core @babel/preset-env
 ```
 
-Configure Babel to target your current version of Node by creating a `babel.config.js` file in the root of your project:
+Configure Babel para que apunte a tu versión actual de Node creando un archivo `babel.config.js` en la raíz de tu proyecto:
 
 ```javascript
 // babel.config.js
@@ -105,9 +105,9 @@ module.exports = {
 };
 ```
 
-**The ideal configuration for Babel will depend on your project.** See [Babel's docs](https://babeljs.io/docs/en/) for more details.
+**La configuración ideal para Babel dependerá de tu proyecto.** Consulte [Documentación de Babel](https://babeljs.io/docs/en/) para obtener más detalles.
 
-Jest will set `process.env.NODE_ENV` to `'test'` if it's not set to something else. You can use that in your configuration to conditionally setup only the compilation needed for Jest, e.g.
+Jest establecerá `process.env.NODE_ENV` en` 'test'` si no está configurado en otra opción. Puedes usar esto en tu configuración para configurar condicionalmente solo la compilación necesaria para Jest, por ejemplo.
 
 ```javascript
 // babel.config.js
@@ -121,7 +121,7 @@ module.exports = api => {
 };
 ```
 
-> Note: `babel-jest` is automatically installed when installing Jest and will automatically transform files if a babel configuration exists in your project. To avoid this behavior, you can explicitly reset the `transform` configuration option:
+> Nota: `babel-jest` se instala automáticamente al instalar Jest y transformará automáticamente los archivos si existe una configuración de babel en tu proyecto. Para evitar este comportamiento, puedes restablecer explícitamente la opción de configuración `transform`:
 
 ```javascript
 // jest.config.js
@@ -132,7 +132,7 @@ module.exports = {
 
 #### Babel 6
 
-Jest 24 dropped support for Babel 6. We highly recommend you to upgrade to Babel 7, which is actively maintained. However, if you cannot upgrade to Babel 7, either keep using Jest 23 or upgrade to Jest 24 with `babel-jest` locked at version 23, like in the example below:
+Jest 24 eliminó el soporte para Babel 6. Te recomendamos encarecidamente que actualices a Babel 7, que se mantiene activamente. Sin embargo, si no puedes actualizar a Babel 7, sige usando Jest 23 o actualiza a Jest 24 con `babel-jest` bloqueado en la versión 23, como en el siguiente ejemplo:
 
 ```
 "dependencies": {
@@ -143,14 +143,14 @@ Jest 24 dropped support for Babel 6. We highly recommend you to upgrade to Babel
 }
 ```
 
-While we generally recommend using the same version of every Jest package, this workaround will allow you to continue using the latest version of Jest with Babel 6 for now.
+Si bien generalmente recomendamos usar la misma versión de cada paquete Jest, esta solución le permitirá continuar usando por ahora la última versión de Jest con Babel 6.
 
-### Using webpack
+### Usando webpack
 
-Jest can be used in projects that use [webpack](https://webpack.github.io/) to manage assets, styles, and compilation. webpack does offer some unique challenges over other tools. Refer to the [webpack guide](Webpack.md) to get started.
+Jest se puede usar en proyectos que usan [webpack] (https://webpack.github.io/) para administrar activos, estilos y compilación. El webpack ofrece algunos desafíos únicos sobre otras herramientas. Consulte la [guía del paquete web] (Webpack.md) para comenzar.
 
-### Using TypeScript
+### Usando TypeScript
 
-Jest supports TypeScript out of the box, via Babel.
+Jest es compatible con TypeScript externamente a través de Babel.
 
-However, there are some caveats to using Typescript with Babel, see http://artsy.github.io/blog/2017/11/27/Babel-7-and-TypeScript/. Another caveat is that Jest will not typecheck your tests. If you want that, you can use [ts-jest](https://github.com/kulshekhar/ts-jest).
+Sin embargo, hay algunas advertencias sobre el uso de Typescript con Babel, consultar http://artsy.github.io/blog/2017/11/27/Babel-7-and-TypeScript/. Otra advertencia es que Jest no revisará las pruebas. Si lo desea, puede usar [ts-jest](https://github.com/kulshekhar/ts-jest).
